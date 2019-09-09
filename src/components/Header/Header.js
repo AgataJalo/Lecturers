@@ -5,7 +5,7 @@ import './Header.scss'
     render() {
         return (
             <div className="header">
-                Header
+                Wykładowcy IT
             </div>
         )
     }

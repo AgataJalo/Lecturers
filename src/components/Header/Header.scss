@@ -1,3 +1,6 @@
+@import './src/styles/variables.scss';
+
 .header{
-    color: blue;
+    color: $textColor;
+    font-size: 2rem;
 }
