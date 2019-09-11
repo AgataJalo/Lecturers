@@ -3,12 +3,15 @@ import './Main.scss'
 
 
 class AddForm extends Component{
-    state = {
+    constructor(props){
+        super(props);
+        this.state = {
         name: "",
         surname: "",
         phone: "",
         email:"",
-    }
+        text: ""
+    }}
 
     /* 
     Mogę skrócić ten zapis
@@ -20,11 +23,13 @@ class AddForm extends Component{
 
 
     handleNameChange = e => {
-        this.setState({name: e.target.value});
+        const name = e.target.value.replace(/\d/g, ''); //nie można wpisać cyfr
+        this.setState({name});
     };
     
     handleSurnameChange = e => {
-        this.setState({surname: e.target.value});
+        const surname = e.target.value.replace(/\d/g, '');
+        this.setState({surname});
     };  
 
     handlePhoneChange = e => {
@@ -34,13 +39,18 @@ class AddForm extends Component{
     handleMailChange = e => {
         this.setState({email: e.target.value});
     };  
+
+    handleTextChange = e => {
+        this.setState({text: e.target.value});
+    };  
     
     handleSubmit = e => {
         e.preventDefault();
         console.log('Imię: ' + this.state.name);
-        console.log('Nazwisko:' + this.state.name);
-        console.log('Numer telefonu: ' + this.state.name);
-        console.log('Email:' + this.state.name);
+        console.log('Nazwisko:' + this.state.surname);
+        console.log('Numer telefonu: ' + this.state.phone);
+        console.log('Email:' + this.state.email);
+        console.log('Uwagi:' + this.state.text);
       };
 
     render(){
@@ -48,16 +58,16 @@ class AddForm extends Component{
             <form className="addLecturerForm"onSubmit={this.handleSubmit}>
                 <h1 className="formTitle">Dodaj wykładowcę:</h1>
                 <label>Imię:
-                    <input type="text" name="name" value={this.state.name} onChange={this.handleNameChange}/>
+                    <input type="text" name="name" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}/>
                 </label>
                 <label>Nazwisko:
-                    <input type="text" name="surname" value={this.state.surname} onChange={this.handleSurnameChange}/>
+                    <input type="text" name="surname" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange}/>
                 </label>
                 <label>Numer telefonu:
-                    <input type="text" name="phone" value={this.state.phone} onChange={this.handlePhoneChange}/>
+                    <input type="text" name="phone" placeholder="Wpisz numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}/>
                 </label>
                 <label> Mail:
-                    <input type="email" name="email" value={this.state.email}onChange={this.handleMailChange} /> 
+                    <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
                 </label>
                 <label> Kurs:
                 JavaScript <input type="checkbox" value="javascript" name="check" />
@@ -77,14 +87,14 @@ class AddForm extends Component{
                 Zdalnie <input type="checkbox" value="Zdalnie" name="check" />
                 </label>
                 <label>Tryb prowadzenia zajęć:
-                Stacjonarny <input type="checkbox" value="Katowice" name="check" />
-                Weekedowy <input type="checkbox" value="Katowice" name="check" />
-                 Online <input type="checkbox" value="Katowice" name="check" />
+                Stacjonarny <input type="checkbox" value="stacjonarny" name="check" />
+                Weekedowy <input type="checkbox" value="weekendowy" name="check" />
+                Online <input type="checkbox" value="online" name="check" />
                 </label>
                 <label> Dodatkowe uwagi:
-                    <textarea></textarea>
+                    <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
                 </label>
-            <input type="submit" value="Dodaj wykładowcę" />
+            <input className="formSubmit" type="submit" value="Dodaj wykładowcę" />
             </form>
         )
     }
