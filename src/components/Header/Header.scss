@@ -2,5 +2,24 @@
 
 .header{
     color: $textColor;
-    font-size: 2rem;
+    text-align: center;
+    font-size: 5em;
+    width: 100vw;
+    padding: 10px;
+    color: #f5cb5c;
+}
+
+@keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+.header p {
+    animation-name: pulse;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
 }

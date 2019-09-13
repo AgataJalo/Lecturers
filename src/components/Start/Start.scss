@@ -1,0 +1,42 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 0.25;
+    background-color: #fbbb21;
+}
+
+.homeTitle{
+    text-transform: uppercase;
+}
+
+div {
+    display:block;
+}
+
+.optionsDiv {
+    border: 1px solid black;
+    position: relative;
+    width: 15vw;
+    height: 15vw;
+    border: 1px solid #000;
+    border-radius: 20%;
+    background-color: #e8eddf;
+    color: #4a525a;
+    cursor: pointer;
+}
+
+.optionsDiv p {
+    text-align: center;
+    text-transform: uppercase;
+    padding:85px;
+}
+
+
+.options{
+    display: flex;
+    width: 50vw;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -64,7 +64,7 @@ class AddForm extends Component{
                     <input type="text" name="surname" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange}/>
                 </label>
                 <label>Numer telefonu:
-                    <input type="text" name="phone" placeholder="Wpisz numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}/>
+                    <input type="number" name="phone" placeholder="Wpisz numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}/>
                 </label>
                 <label> Mail:
                     <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
@@ -100,7 +100,7 @@ class AddForm extends Component{
     }
 }
 
- class Main extends Component {
+class Main extends Component {
     render() {
         return (
             <AddForm/>

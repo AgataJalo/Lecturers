@@ -5,7 +5,7 @@ import './Header.scss'
     render() {
         return (
             <div className="header">
-                Wykładowcy IT
+                <p>Wykładowcy IT</p>
             </div>
         )
     }
