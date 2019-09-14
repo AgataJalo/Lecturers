@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Main.scss'
+
 /*import {
     NavLink,
   } from 'react-router-dom'; */
@@ -13,7 +14,7 @@ class AddForm extends Component{
         surname: "",
         phone: "",
         email:"",
-        text: ""
+        text: "",
     }}
 
     /* 
@@ -45,8 +46,9 @@ class AddForm extends Component{
 
     handleTextChange = e => {
         this.setState({text: e.target.value});
-    };  
+    };
     
+
     handleSubmit = e => {
         e.preventDefault();
         console.log('Imię: ' + this.state.name);
@@ -55,6 +57,16 @@ class AddForm extends Component{
         console.log('Email:' + this.state.email);
         console.log('Uwagi:' + this.state.text);
       };
+
+     /*submitClick = e => {
+        e.preventDefault();
+        if(this.state.name !== '' && this.state.surname !== '' && this.state.phone !== '' && this.state.email !== ''){
+            alert("Dodany do bazy!");
+        } else {
+            alert("Uzupełnij pola");
+        }
+        
+     } */
 
     render(){
         return (
@@ -72,8 +84,9 @@ class AddForm extends Component{
                 <label> Mail:
                     <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
                 </label>
+
                 <label> Kurs:
-                JavaScript <input type="checkbox" value="javascript" name="check" />
+                JavaScript <input type="checkbox" value="javascript" name="check"/>
                 Java <input type="checkbox" value="java" name="check" />
                 Python <input type="checkbox" value="python" name="check" />
                 PHP <input type="checkbox" value="php" name="check" />
@@ -81,6 +94,7 @@ class AddForm extends Component{
                 Tester Manualny <input type="checkbox" value="testermanualny" name="check" />
                 Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" />
                 </label>
+
                 <label>Lokalizacja: 
                 Warszawa <input type="checkbox" value="Warszawa" name="check" />
                 Wrocław <input type="checkbox" value="Wrocław" name="check" />
@@ -89,15 +103,18 @@ class AddForm extends Component{
                 Katowice <input type="checkbox" value="Katowice" name="check" />
                 Zdalnie <input type="checkbox" value="Zdalnie" name="check" />
                 </label>
+
                 <label>Tryb prowadzenia zajęć:
                 Stacjonarny <input type="checkbox" value="stacjonarny" name="check" />
                 Weekedowy <input type="checkbox" value="weekendowy" name="check" />
                 Online <input type="checkbox" value="online" name="check" />
                 </label>
+
                 <label> Dodatkowe uwagi:
                     <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
                 </label>
-            <input className="formSubmit" type="submit" value="Dodaj wykładowcę" />
+                
+            <input className="formSubmit" type="submit" value="Dodaj wykładowcę"/>
             </form>
         )
     }

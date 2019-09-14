@@ -4,9 +4,6 @@ import {
     NavLink,
   } from 'react-router-dom';
 
-
-
-
 class Start extends Component {
     render() {
         return (
@@ -15,7 +12,7 @@ class Start extends Component {
                     <section className="options">
                         <NavLink to="/main" className="optionsDiv"><p>A</p></NavLink>
                         <NavLink to="/finder" className="optionsDiv"><p>B</p></NavLink>
-                        <div className="optionsDiv"><p>C</p></div>
+                        <NavLink to ="/legenda" className="optionsDiv"><p>C</p></NavLink>
                      </section>
             </div>
         )
