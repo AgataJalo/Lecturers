@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import '../Start/Start.scss'
+import {
+    NavLink,
+  } from 'react-router-dom';
 
 
 
@@ -10,9 +13,9 @@ class Start extends Component {
             <div className="home">
                 <h2 className="homeTitle">Wybierz jedną z opcji</h2>
                     <section className="options">
-                         <div className="optionsDiv"><p>Dodaj</p></div>
-                        <div className="optionsDiv"><p>Szukaj</p></div>
-                        <div className="optionsDiv"><p>Nie wiem:(</p></div>
+                        <NavLink to="/main" className="optionsDiv"><p>A</p></NavLink>
+                        <div className="optionsDiv"><p>B</p></div>
+                        <div className="optionsDiv"><p>C</p></div>
                      </section>
             </div>
         )
