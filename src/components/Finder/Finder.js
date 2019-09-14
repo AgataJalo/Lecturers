@@ -1,31 +1,41 @@
 import React, { Component } from 'react'
 
-
-
-
 class Finder extends Component {
-    state={
-        text: " ",
-        error: "UPS"
-    }
+  constructor(props){
+      super(props);
+      this.state={
+          lecturers: []
+      };
+  }
 
-    handleDataChange =(e) =>{
-        const value  = this.refs.number.value;
-        console.log(value)
-        fetch(`http://localhost:8000/lecturers`)
-        .then(response=>response.json())
-        .then(data=>console.log(data))
-        .catch(error => console.log(error))
-    }
+componentDidMount(){
+    let url ="http://localhost:8000/lecturers"
+    fetch(url)
+    .then(resp => resp.json())
+    .then(data=> {
+        let lecturers =data.map((info, index) => {
+            return(
+                <div key={index}>
+                    <span>
+                    Imię : {info.name + ' '}
+                    Nazwisko: {info.surname + ' '}
+                    Telefon: {info.phone + ' '}
+                    Mail: {info.email + ' '}
+                    </span>
+                </div>
+            )
+    })
+    this.setState({lecturers:lecturers});
+})
+}
 
 
 
     render() {
         return (
             <div className="home">
-                <h2 className="homeTitle">Szukaj</h2>
-                <input onChange ={this.handleDataChange} type="text" ref="number"/>
-                <h5>Wynik wyszukiwania: {this.state.text}</h5>
+                <input type="text"/>
+               {this.state.lecturers}
             </div>
         )
     }
