@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import './App.scss'
 import Start from '../Start/Start'
 import Main from '../Main/Main'
+import Finder from '../Finder/Finder'
 import {
     HashRouter,
     Route,
@@ -19,6 +20,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path='/' component={Start} />
                     <Route path='/main' component={Main} />
+                    <Route path='/finder' component={Finder} />
                     <Route component={Start} />
                 </Switch>
           </HashRouter>

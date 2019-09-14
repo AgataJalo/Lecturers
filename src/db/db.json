@@ -1,4 +1,115 @@
 {
-    "lecturers": ["Jan Kowalski"]
-} 
+    "lecturers": [
+      {
+        "id": 1,
+        "name": "Jan",
+        "surname": "Kowalski",
+        "phone": "111-111-111",
+        "email": "jankowalski@pl",
+        "course": "JavaScript",
+        "localization":"Warszawa",
+        "mode":"stacjonarny",
+        "comments": "Dobry gość"
+      },
+      {
+        "id": 2,
+        "name": "Janusz",
+        "surname": "Polak",
+        "phone": "222-222-222",
+        "email": "januszpolak@pl",
+        "course": "Java",
+        "localization":"Wrocław",
+        "mode":"weekendowy",
+        "comments": "Może być"
+      },
+      {
+        "id": 3,
+        "name": "Grażyna",
+        "surname": "Polka",
+        "phone": "333-333-333",
+        "email": "grażynap@pl",
+        "course": "PHP",
+        "localization":"Poznań",
+        "mode":"stacjonarny",
+        "comments": "Super!"
+        },
+        {
+        "id": 4,
+        "name": "Grażyna",
+        "surname": "Polka",
+        "phone": "333-333-333",
+        "email": "grażynap@pl",
+        "course": "PHP",
+        "localization":"Poznań",
+        "mode":"stacjonarny",
+        "comments": "Super!"
+        },
+        {
+        "id": 5,
+        "name": "Grażyna",
+        "surname": "Polka",
+        "phone": "333-333-333",
+        "email": "grażynap@pl",
+        "course": "PHP",
+        "localization":"Poznań",
+        "mode":"stacjonarny",
+        "comments": "Super!"
+        },
+        {
+        "id": 6,
+        "name": "Grażyna",
+        "surname": "Polka",
+        "phone": "333-333-333",
+        "email": "grażynap@pl",
+        "course": "PHP",
+        "localization":"Poznań",
+        "mode":"stacjonarny",
+        "comments": "Super!"
+        },
+        {
+        "id": 7,
+        "name": "Grażyna",
+        "surname": "Polka",
+        "phone": "333-333-333",
+        "email": "grażynap@pl",
+        "course": "PHP",
+        "localization":"Poznań",
+        "mode":"stacjonarny",
+        "comments": "Super!"
+         },
+         {
+         "id": 8,
+         "name": "Grażyna",
+         "surname": "Polka",
+         "phone": "333-333-333",
+         "email": "grażynap@pl",
+         "course": "PHP",
+         "localization":"Poznań",
+         "mode":"stacjonarny",
+         "comments": "Super!"
+        },
+        {
+         "id": 9,
+         "name": "Grażyna",
+         "surname": "Polka",
+         "phone": "333-333-333",
+         "email": "grażynap@pl",
+         "course": "PHP",
+         "localization":"Poznań",
+         "mode":"stacjonarny",
+         "comments": "Super!"
+         },
+         {
+          "id": 10,
+          "name": "Grażyna",
+          "surname": "Polka",
+          "phone": "333-333-333",
+          "email": "grażynap@pl",
+          "course": "PHP",
+          "localization":"Poznań",
+          "mode":"stacjonarny",
+          "comments": "Super!"
+        }
+    ]
+  }
 

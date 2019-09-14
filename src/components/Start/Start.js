@@ -14,7 +14,7 @@ class Start extends Component {
                 <h2 className="homeTitle">Wybierz jedną z opcji</h2>
                     <section className="options">
                         <NavLink to="/main" className="optionsDiv"><p>A</p></NavLink>
-                        <div className="optionsDiv"><p>B</p></div>
+                        <NavLink to="/finder" className="optionsDiv"><p>B</p></NavLink>
                         <div className="optionsDiv"><p>C</p></div>
                      </section>
             </div>
