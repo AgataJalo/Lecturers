@@ -10,12 +10,20 @@ class AddForm extends Component{
     constructor(props){
         super(props);
         this.state = {
-        name: "",
-        surname: "",
-        phone: "",
-        email:"",
-        text: "",
-    }}
+            name: "",
+            surname: "",
+            phone: "",
+            email:"",
+            text: "",
+            technology: [],
+            localization: [],
+            mode: []
+        }
+            this.checkboxCourses = this.checkboxCourses.bind(this);
+            this.checkboxLocalization = this.checkboxLocalization.bind(this);
+            this.checkboxMode = this.checkboxMode.bind(this);
+
+        }
 
     /* 
     Mogę skrócić ten zapis
@@ -56,17 +64,56 @@ class AddForm extends Component{
         console.log('Numer telefonu: ' + this.state.phone);
         console.log('Email:' + this.state.email);
         console.log('Uwagi:' + this.state.text);
+        console.log('Technologia:' + this.state.technology);
+        console.log('Lokalizacja:' + this.state.localization);
+        console.log('Tryb:' + this.state.mode);
       };
+      
+    //Obsługa checkboxów 
 
-     /*submitClick = e => {
-        e.preventDefault();
-        if(this.state.name !== '' && this.state.surname !== '' && this.state.phone !== '' && this.state.email !== ''){
-            alert("Dodany do bazy!");
+    checkboxCourses(e) {
+        //console.log(e.currentTarget.value, e.currentTarget.checked);
+
+        let state = this.state;
+
+        if(e.currentTarget.checked){
+            state.technology.push(e.currentTarget.value);
         } else {
-            alert("Uzupełnij pola");
+            let index = state.technology.indexOf(e.currentTarget.value);
+            delete state.technology[index];
         }
+
+        this.setState(state);
+       // console.log(state);
+    }
+
+    checkboxLocalization(e){
+        let state = this.state;
+
+        if (e.currentTarget.checked){
+            state.localization.push(e.currentTarget.value);
+        } else {
+            let index = state.localization.indexOf(e.currentTarget.value);
+            delete state.localization[index];   
+        }
+        this.setState(state);
+       // console.log(state);
+    }
+
+    checkboxMode(e){
+        let state = this.state;
         
-     } */
+        if(e.currentTarget.checked){
+            state.mode.push(e.currentTarget.value);
+        } else {
+            let index = state.mode.indexOf(e.currentTarget.value);
+            delete state.mode[index];
+        }
+        this.setState(state);
+       // console.log(state);
+    }
+
+
 
     render(){
         return (
@@ -86,35 +133,35 @@ class AddForm extends Component{
                 </label>
 
                 <label> Kurs:
-                JavaScript <input type="checkbox" value="javascript" name="check"/>
-                Java <input type="checkbox" value="java" name="check" />
-                Python <input type="checkbox" value="python" name="check" />
-                PHP <input type="checkbox" value="php" name="check" />
-                UX Design <input type="checkbox" value="ux" name="check" />
-                Tester Manualny <input type="checkbox" value="testermanualny" name="check" />
-                Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" />
+                JavaScript <input type="checkbox" value="javascript" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                Java <input type="checkbox" value="java" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                Python <input type="checkbox" value="python" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                PHP <input type="checkbox" value="php" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                UX Design <input type="checkbox" value="ux" name="check" onChange={(e) => this.checkboxCourses(e)} />
+                Tester Manualny <input type="checkbox" value="testermanualny" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" onChange={(e) => this.checkboxCourses(e)}/>
                 </label>
 
                 <label>Lokalizacja: 
-                Warszawa <input type="checkbox" value="Warszawa" name="check" />
-                Wrocław <input type="checkbox" value="Wrocław" name="check" />
-                Poznań <input type="checkbox" value="Poznań" name="check" />
-                Kraków <input type="checkbox" value="Kraków" name="check" />
-                Katowice <input type="checkbox" value="Katowice" name="check" />
-                Zdalnie <input type="checkbox" value="Zdalnie" name="check" />
+                Warszawa <input type="checkbox" value="Warszawa" name="check" onChange={(e) => this.checkboxLocalization(e)} />
+                Wrocław <input type="checkbox" value="Wrocław" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+                Poznań <input type="checkbox" value="Poznań" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+                Kraków <input type="checkbox" value="Kraków" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+                Katowice <input type="checkbox" value="Katowice" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+                Zdalnie <input type="checkbox" value="Zdalnie" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
                 </label>
 
                 <label>Tryb prowadzenia zajęć:
-                Stacjonarny <input type="checkbox" value="stacjonarny" name="check" />
-                Weekedowy <input type="checkbox" value="weekendowy" name="check" />
-                Online <input type="checkbox" value="online" name="check" />
+                Stacjonarny <input type="checkbox" value="stacjonarny" name="check" onChange={(e) => this.checkboxMode(e)} />
+                Weekedowy <input type="checkbox" value="weekendowy" name="check" onChange={(e) => this.checkboxMode(e)}/>
+                Online <input type="checkbox" value="online" name="check" onChange={(e) => this.checkboxMode(e)}/>
                 </label>
 
                 <label> Dodatkowe uwagi:
                     <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
                 </label>
                 
-            <input className="formSubmit" type="submit" value="Dodaj wykładowcę"/>
+            <input className="formSubmit" type="submit" value="Dodaj wykładowcę" onClick={}/>
             </form>
         )
     }
