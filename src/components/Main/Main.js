@@ -68,7 +68,7 @@ class AddForm extends Component{
         console.log('Lokalizacja:' + this.state.localization);
         console.log('Tryb:' + this.state.mode);
       };
-      
+
     //Obsługa checkboxów 
 
     checkboxCourses(e) {
@@ -161,7 +161,7 @@ class AddForm extends Component{
                     <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
                 </label>
                 
-            <input className="formSubmit" type="submit" value="Dodaj wykładowcę" onClick={}/>
+            <input className="formSubmit" type="submit" value="Dodaj wykładowcę"/>
             </form>
         )
     }
