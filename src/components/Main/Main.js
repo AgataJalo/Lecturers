@@ -22,6 +22,7 @@ class AddForm extends Component{
             this.checkboxCourses = this.checkboxCourses.bind(this);
             this.checkboxLocalization = this.checkboxLocalization.bind(this);
             this.checkboxMode = this.checkboxMode.bind(this);
+            /* this.submitForm = this.submitForm.bind(this);*/
 
         }
 
@@ -33,6 +34,7 @@ class AddForm extends Component{
   });
 } */
 
+//Obsługa inputów text,number,email
 
     handleNameChange = e => {
         const name = e.target.value.replace(/\d/g, ''); //nie można wpisać cyfr
@@ -69,7 +71,7 @@ class AddForm extends Component{
         console.log('Tryb:' + this.state.mode);
       };
 
-    //Obsługa checkboxów 
+//Obsługa checkboxów 
 
     checkboxCourses(e) {
         //console.log(e.currentTarget.value, e.currentTarget.checked);
@@ -113,7 +115,26 @@ class AddForm extends Component{
        // console.log(state);
     }
 
+ // Submit
 
+    /* submitForm(){
+
+        let state = this.state;
+        
+        if(this.state.name === ''){
+            alert("Uzupełnij imię!");
+        } else if (this.state.surname === ''){
+            alert("Uzupełnij nazwisko!")
+        } else if (this.state.phone === ''){
+            alert("Uzupełnij numer telefonu!")
+        } else if(this.state.email === ''){
+            alert("Uzupełnij e-mail!")  
+        } else {
+            alert("Dodany do bazy")
+        }
+        
+        this.setState(state);
+} */
 
     render(){
         return (
@@ -161,7 +182,7 @@ class AddForm extends Component{
                     <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
                 </label>
                 
-            <input className="formSubmit" type="submit" value="Dodaj wykładowcę"/>
+            <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
             </form>
         )
     }
