@@ -110,6 +110,38 @@
           "mode":"weekendowy",
           "comments": "Super!"
         }
-    ]
+    ],
+         "avaliability": [
+          { "id": 1,
+            "name": "Jan",
+            "surname": "Kowalski",
+            "phone": "111-111-111",
+            "email": "jankowalski@pl",
+            "course": "JavaScript",
+            "localization":"Warszawa",
+            "mode":"stacjonarny",
+            "comments": "Dobry gość",
+            "zajety": "30 września - 4 października"},
+          {
+            "id2": "30 września - 4 października"},
+          { 
+            "id3": "30 września - 4 października"},
+          { 
+            "id4": "30 września - 4 października"},
+          { 
+            "id5": "30 września - 4 października"},
+          { 
+            "id6": "30 września - 4 października"},
+          { 
+            "id7": "30 września - 4 października"},
+          { 
+            "id8": "30 września - 4 października"},
+          {
+            "id9": "30 września - 4 października"},
+          { 
+            "id10": "30 września - 4 października"}
+         ]
+          
+
   }
 

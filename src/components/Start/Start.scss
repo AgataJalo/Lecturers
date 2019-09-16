@@ -1,42 +1,108 @@
-.home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    flex-grow: 0.25;
-    background-color: #fbbb21;
-}
 
-.homeTitle{
-    text-transform: uppercase;
-}
+  .home {
+    font-size:24px;
+    min-width:500px;
+    max-width:1800px;
+    border-left:5px solid gold;
+    border-right:5px solid gold;
+    background-color:white;
+    padding: 50px;
+  }
 
-div {
-    display:block;
-}
-
-.optionsDiv {
-    border: 1px solid black;
-    position: relative;
-    width: 15vw;
-    height: 15vw;
-    border: 1px solid #000;
-    border-radius: 20%;
-    background-color: #e8eddf;
-    color: #4a525a;
-    cursor: pointer;
-}
-
-.optionsDiv p {
-    text-align: center;
-    text-transform: uppercase;
-    padding:85px;
-}
+h4 {
+    text-align:center;
+    font-size:1.6em;
+    line-height:3.5em;
+    background-color:white;
+    
+  }
 
 
 .options{
-    display: flex;
-    width: 50vw;
-    justify-content: space-around;
-    align-items: center;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
 }
+
+
+.optionsDivLeft{
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size:1em;
+    line-height:0.5em;
+    background-color: #fbbb21;
+    border: 1px solid #fbbb21;
+    border-radius: 10px;
+    margin-right: 25px;
+  }
+
+  .optionsDivLeft p {
+    margin:15px 0;
+    padding:15px;
+    text-align: center;
+    color: white;
+}
+
+.optionsDivCenter {
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size:1em;
+    line-height:0.5em;
+    background-color: #fbbb21;
+    border: 1px solid #fbbb21;
+    border-radius: 10px;
+    margin-right: 25px;
+  }
+
+.optionsDivCenter p{
+    margin:15px 0;
+    padding:15px;
+    text-align: center;
+    color:white;
+}
+
+.optionsDivRight {
+    flex-grow: 1;
+    font-size:1em;
+    flex-basis: 0;
+    line-height:0.5em;
+    background-color: #fbbb21;
+    border: 1px solid #fbbb21;
+    border-radius: 10px;
+  }
+
+.optionsDivRight p  {
+    margin:15px 0;
+    padding:15px;
+    text-align: center;
+    color:white;
+  }
+
+  .navLinks:link{
+    text-decoration: none;
+  }
+
+
+  @media all and (max-width:769px) {
+    .home {
+      font-size:15px;
+    }
+
+    .options{
+      display:flex;
+    }
+  
+    .optionsDivLeft, .optionsDivCenter, .optionsDivRight {
+      margin:15px;
+    }
+
+    .optionsDivLeft p, .optionsDivCenter p, .optionsDivRight p{
+        margin:15px 0;
+        padding:15px;
+        text-align: center;
+        color:white;
+    }
+  
+  }

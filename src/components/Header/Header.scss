@@ -1,15 +1,46 @@
 @import './src/styles/variables.scss';
 
-.header{
-    color: $textColor;
-    text-align: center;
-    font-size: 5em;
-    width: 100vw;
-    padding: 10px;
-    color: #f5cb5c;
+h2 {
+  text-align:center;
+  font-size:4em;
+  line-height:1.5em;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  display:flex;
+  justify-content: center;
+  //text-transform: uppercase;
+} 
+
+@keyframes pop-up {
+	0%{transform: scale(0) translateY(-10px); opacity: 0;}
+	80%{transform: scale(1.2) translateY(-2px); opacity: .8;}
+	100%{transform: scale(1) translateY(0px); opacity: 1;}
 }
 
-@keyframes pulse {
+.letter {
+  transform: scale(0);
+  animation: pop-up .75s forwards;		
+}
+
+@mixin animation-delay($time) {
+  animation-delay: $time;
+  }
+
+.letter {
+  transform: scale(0);
+  animation: pop-up .75s forwards;		
+  @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+              @include animation-delay((0s + ($i * 0.1)));
+          }
+    }
+}
+
+.letterIT{
+  color: #fbbb21;
+}
+
+/*@keyframes pulse {
     0% {
       opacity: 1;
     }
@@ -22,4 +53,4 @@
     animation-name: pulse;
     animation-duration: 4s;
     animation-iteration-count: 1;
-}
+} */

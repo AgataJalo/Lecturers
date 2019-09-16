@@ -7,8 +7,17 @@
     
 }
 
+html{
+    font-size: 20px;
+}
+
 body {
     background-color: $baseColor;
+    background-image: url(./styles/email-pattern.png);
+    background-repeat: repeat;
     width: 100vw;
     height: 100vh;
+    min-width: 350px;
+    min-height: 350px;
+
 }
