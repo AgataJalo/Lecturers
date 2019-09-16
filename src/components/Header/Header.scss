@@ -1,15 +1,13 @@
 @import './src/styles/variables.scss';
 
-h2 {
-  text-align:center;
+
+.header{
   font-size:4em;
   line-height:1.5em;
   font-family: 'Amatic SC', cursive;
   font-weight: bold;
-  display:flex;
-  justify-content: center;
-  //text-transform: uppercase;
-} 
+}
+
 
 @keyframes pop-up {
 	0%{transform: scale(0) translateY(-10px); opacity: 0;}
@@ -19,7 +17,8 @@ h2 {
 
 .letter {
   transform: scale(0);
-  animation: pop-up .75s forwards;		
+  animation: pop-up .75s forwards;
+ 
 }
 
 @mixin animation-delay($time) {
@@ -39,18 +38,3 @@ h2 {
 .letterIT{
   color: #fbbb21;
 }
-
-/*@keyframes pulse {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-
-.header p {
-    animation-name: pulse;
-    animation-duration: 4s;
-    animation-iteration-count: 1;
-} */
