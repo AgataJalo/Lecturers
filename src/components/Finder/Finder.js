@@ -1,5 +1,10 @@
-import React, { Component } from 'react'
-import '../Finder/Finder.scss'
+import React, { Component } from 'react';
+import '../Finder/Finder.scss';
+import Table from 'react-bootstrap/Table';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import FormControl from 'react-bootstrap/FormControl';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 //Wyszukiwarka//
 
@@ -40,23 +45,59 @@ class Search extends Component {
     }
     
     render () {
-      return (
-        <div>
-          <input onInput={this.filterUsers.bind(this)} />
-          <UsersList users={this.state.filteredUsers} />
-        </div>
-      );
-    }
-  };
+    return (
+      <Container>
+        <Row><InputGroup className="mb-3">
+          <InputGroup.Prepend>
+            <InputGroup.Text id="inputGroup-sizing-default">Szukaj</InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl onInput={this.filterUsers.bind(this)} 
+            aria-label="Default"
+            aria-describedby="inputGroup-sizing-default"
+          />
+        </InputGroup></Row>
+        <Row><UsersList users={this.state.filteredUsers} /></Row>
+      </Container>
+    );
+  }
+};
   
   const UsersList = ({ users }) => {
     if (users.length > 0) {
       return (
-        <ul>
+        <Row>
+        <Table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th>ID:</th>
+              <th>Imię:</th>
+              <th>Nazwisko:</th>
+              <th>Numer telefonu:</th>
+              <th>Mail:</th>
+              <th>Kurs:</th>
+              <th>Tryb:</th>
+              <th>Lokalizacja:</th>
+              <th>Uwagi:</th>
+            </tr>
+          </thead>
+          <tbody>
           {users.map(function(user, key){
-              return <li key={key}>{user.id}{user.name} {user.surname} {user.phone} {user.email}{user.course}{user.localization}{user.mode}{user.comments}</li> 
+             // return <li key={key}>{user.id}{user.name} {user.surname} {user.phone} {user.email}{user.course}{user.localization}{user.mode}{user.comments}</li> 
+              return <tr key={key}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.surname}</td>
+                <td>{user.phone}</td>
+                <td>{user.email}</td>
+                <td>{user.course}</td>
+                <td>{user.mode}</td>
+                <td>{user.localization}</td>
+                <td>{user.comments}</td>
+                </tr>
           })}
-        </ul>
+          </tbody>
+        </Table>
+        </Row>
       );
     }
   
@@ -70,9 +111,7 @@ class Search extends Component {
 class FinderComponents extends Component{
     render(){
         return (
-            <div>
-                <Search/>
-            </div>
+              <Search/>
         )
     }
 }

@@ -342,7 +342,7 @@ class AddForm extends Component{
                             <Form.Control as="textarea" rows="3" placeholder="Uwagi" value={this.state.text} onChange={this.handleTextChange} ></Form.Control>
                         </Form.Group>
                     </Row>
-                    <Button variant="primary" type="submit">Submit</Button>
+                    <Button variant="primary" type="submit">Dodaj wykładowcę</Button>
                 </Form>
             </Container>
         )
