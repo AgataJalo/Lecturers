@@ -1,3 +1,25 @@
 $baseColor: #f0f0f0;
 $logoColor: #fbbb21;
 $textColor: #6c6b6b;
+
+.btn {
+    background-color: $logoColor;
+    border: 1px solid $logoColor;
+    
+}
+
+.btn:hover{
+    background-color: white;
+    color: $logoColor;
+    border: 1px solid $logoColor;
+}
+
+.form-control{
+  border: 1px solid $logoColor;
+
+}
+
+.form-control:focus{
+    border: 1px solid $logoColor;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 219, 100, 0.5)
+}

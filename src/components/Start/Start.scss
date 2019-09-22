@@ -7,11 +7,8 @@
     border-right:5px solid gold;
     background-color:white;
     padding: 50px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
-      animation: changecolor 1.4s;
+    
+     
   
 
   }
@@ -125,19 +122,3 @@ h4 {
     }
   
   }
-
-  @keyframes changecolor {
-
-    from {
-    
-    background-color: white;
-    
-    }
-    
-    to {
-    
-    background-color: #ff3b41;
-    
-    }
-    
-    }
