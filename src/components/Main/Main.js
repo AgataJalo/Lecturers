@@ -192,183 +192,159 @@ class AddForm extends Component{
             // <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
             // </form>
             <Container>
-                <Form className="addLecturerForm"onSubmit={this.handleSubmit}>
-                <Row className="justify-content-md-center">
-                    
-                        <Form.Group controlId="nameSection">
+                <Form className="addLecturerForm" onSubmit={this.handleSubmit}>
+                    <Row>
+                        <Form.Group as={Col} controlId="nameSection">
                             <Form.Label>Imię:</Form.Label>
                             <Form.Control type="text" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="surnameSection">
+                        <Form.Group as={Col} controlId="surnameSection">
                             <Form.Label>Nazwisko:</Form.Label>
                             <Form.Control type="text" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange} ></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="mailSection">
+                    </Row>
+                    <Row>
+                        <Form.Group as={Col} controlId="mailSection">
                             <Form.Label>Mail:</Form.Label>
-                            <Form.Control type="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange}></Form.Control>
+                            <Form.Control type="email" placeholder="Wpisz e-mail" value={this.state.email} onChange={this.handleMailChange}></Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="numberSection">
+                        <Form.Group as={Col} controlId="numberSection">
                             <Form.Label>Numer telefonu:</Form.Label>
                             <Form.Control type="text" placeholder="Numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}></Form.Control>
                         </Form.Group>
-                </Row>
-                
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}> Kurs: </Form.Label>
-                    <Col sm={10}>
-                        <Form.Check
-                            type="checkbox"
-                            label="JavaScript"
-                            //name="formHorizontalRadios"
-                            //id="formHorizontalRadios1"
-                            value="javascript"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Java"
-                           // name="formHorizontalRadios"
-                            //id="formHorizontalRadios2"
-                            value="java"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Python"
-                           // name="formHorizontalRadios"
-                            //id="formHorizontalRadios3"
-                            value="python"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="PHP"
-                           // name="formHorizontalRadios"
-                           // id="formHorizontalRadios3"
-                            value="php"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="UX Design"
-                           // name="formHorizontalRadios"
-                           // id="formHorizontalRadios3"
-                            value="ux"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Tester Manualny"
-                            //name="formHorizontalRadios"
-                           // id="formHorizontalRadios3"
-                            value="testermanualny"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Tester Automatyzujący"
-                           // name="formHorizontalRadios"
-                           // id="formHorizontalRadios3"
-                            value="testerautomatyzujący"
-                            onChange={(e) => this.checkboxCourses(e)}
-                        />
-                    </Col>
-                </Form.Group>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}> Lokalizacja: </Form.Label>
-                    <Col sm={10}>
-                        <Form.Check
-                            type="checkbox"
-                            label="Warszawa"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios1"
-                            value="Warszawa"
-                            onChange={(e) => this.checkboxLocalization(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Wrocław"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios2"
-                            value="Wrocław"
-                            onChange={(e) => this.checkboxLocalization(e)}
-                        
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Poznań"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
-                            value="Poznań"
-                            onChange={(e) => this.checkboxLocalization(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Kraków"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
-                            value="Kraków"
-                            onChange={(e) => this.checkboxLocalization(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Katowice"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
-                            value="Katowice"
-                            onChange={(e) => this.checkboxLocalization(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Zdalnie"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
-                            value="Zdalnie"
-                            onChange={(e) => this.checkboxLocalization(e)}
-                        />
-                    </Col>
-                </Form.Group>
-                <Form.Group as={Row}>
-                    <Form.Label as="legend" column sm={2}> Tryb prowadzenia zajęć: </Form.Label>
-                    <Col sm={10}>
-                        <Form.Check
-                            type="checkbox"
-                            label="Stacjonarny"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios1"
-                            value="stacjonarny"
-                            onChange={(e) => this.checkboxMode(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Weekendowy"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios2"
-                            value="weekendowy"
-                            onChange={(e) => this.checkboxMode(e)}
-                        />
-                        <Form.Check
-                            type="checkbox"
-                            label="Online"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
-                            value="online"
-                            onChange={(e) => this.checkboxMode(e)}
-                        />
-                    </Col>
-                </Form.Group>
-                <Row className="justify-content-md-center">
-                <Form.Group controlId="Remarks">
-                            <Form.Label>Uwagi:</Form.Label>
-                            <Form.Control type="textarea" placeholder="Uwagi"value={this.state.text} onChange={this.handleTextChange} ></Form.Control>
+                    </Row>
+                    <Row>
+                        <Form.Group as={Col}>
+                            <Form.Label as="legend"> Kurs: </Form.Label>
+                            <Form.Check
+                                type="checkbox"
+                                label="JavaScript"
+                                //name="formHorizontalRadios"
+                                //id="formHorizontalRadios1"
+                                value="javascript"
+                                onChange={(e) => this.checkboxCourses(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Java"
+                                // name="formHorizontalRadios"
+                                //id="formHorizontalRadios2"
+                                value="java"
+                                onChange={(e) => this.checkboxCourses(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Python"
+                                // name="formHorizontalRadios"
+                                //id="formHorizontalRadios3"
+                                value="python"
+                                onChange={(e) => this.checkboxCourses(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="PHP"
+                                // name="formHorizontalRadios"
+                                // id="formHorizontalRadios3"
+                                value="php"
+                                onChange={(e) => this.checkboxCourses(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="UX Design"
+                                // name="formHorizontalRadios"
+                                // id="formHorizontalRadios3"
+                                value="ux"
+                                onChange={(e) => this.checkboxCourses(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Tester Manualny"
+                                //name="formHorizontalRadios"
+                                // id="formHorizontalRadios3"
+                                value="testermanualny"
+                                onChange={(e) => this.checkboxCourses(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Tester Automatyzujący"
+                                // name="formHorizontalRadios"
+                                // id="formHorizontalRadios3"
+                                value="testerautomatyzujący"
+                                onChange={(e) => this.checkboxCourses(e)} />
                         </Form.Group>
-                        </Row>
-                        <Button variant="primary" type="submit">
-    Submit
-  </Button>
-                        </Form>
+                        <Form.Group as={Col}>
+                            <Form.Label as="legend"> Lokalizacja: </Form.Label>
+                            <Form.Check
+                                type="checkbox"
+                                label="Warszawa"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios1"
+                                value="Warszawa"
+                                onChange={(e) => this.checkboxLocalization(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Wrocław"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios2"
+                                value="Wrocław"
+                                onChange={(e) => this.checkboxLocalization(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Poznań"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios3"
+                                value="Poznań"
+                                onChange={(e) => this.checkboxLocalization(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Kraków"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios3"
+                                value="Kraków"
+                                onChange={(e) => this.checkboxLocalization(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Katowice"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios3"
+                                value="Katowice"
+                                onChange={(e) => this.checkboxLocalization(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Zdalnie"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios3"
+                                value="Zdalnie"
+                                onChange={(e) => this.checkboxLocalization(e)} />
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label as="legend">Tryb prowadzenia zajęć:</Form.Label>
+                            <Form.Check
+                                type="checkbox"
+                                label="Stacjonarny"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios1"
+                                value="stacjonarny"
+                                onChange={(e) => this.checkboxMode(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Weekendowy"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios2"
+                                value="weekendowy"
+                                onChange={(e) => this.checkboxMode(e)} />
+                            <Form.Check
+                                type="checkbox"
+                                label="Online"
+                                name="formHorizontalRadios"
+                                id="formHorizontalRadios3"
+                                value="online"
+                                onChange={(e) => this.checkboxMode(e)} />
+                        </Form.Group>
+                    </Row>
+                    <Row>
+                        <Form.Group  as={Col}controlId="Remarks">
+                            <Form.Label>Uwagi:</Form.Label>
+                            <Form.Control as="textarea" rows="3" placeholder="Uwagi" value={this.state.text} onChange={this.handleTextChange} ></Form.Control>
+                        </Form.Group>
+                    </Row>
+                    <Button variant="primary" type="submit">Submit</Button>
+                </Form>
             </Container>
-            
         )
     }
 }
