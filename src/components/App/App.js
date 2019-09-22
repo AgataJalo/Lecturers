@@ -4,7 +4,7 @@ import './App.scss'
 import Start from '../Start/Start'
 import Main from '../Main/Main'
 import FinderComponents from '../Finder/Finder'
-import Calendar from '../Calendar/Calendar'
+import CalendarX from '../Calendar/Calendar'
 import {
     HashRouter,
     Route,
@@ -22,7 +22,7 @@ class App extends Component {
                     <Route exact path='/' component={Start} />
                     <Route path='/main' component={Main} />
                     <Route path='/finder' component={FinderComponents} />
-                    <Route path='/calendar' component={Calendar} />
+                    <Route path='/calendar' component={CalendarX} />
                     <Route component={Start} />
                 </Switch>
           </HashRouter>
