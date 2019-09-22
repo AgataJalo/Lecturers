@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import './Main.scss'
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 /*import {
@@ -139,55 +143,214 @@ class AddForm extends Component{
 
     render(){
         return (
-            <form className="addLecturerForm"onSubmit={this.handleSubmit}>
-                <h1 className="formTitle">Dodaj wykładowcę:</h1>
-                <label>Imię:
-                    <input type="text" name="name" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}/>
-                </label>
-                <label>Nazwisko:
-                    <input type="text" name="surname" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange}/>
-                </label>
-                <label>Numer telefonu:
-                    <input type="number" name="phone" placeholder="Wpisz numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}/>
-                </label>
-                <label> Mail:
-                    <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
-                </label>
+            // <form className="addLecturerForm"onSubmit={this.handleSubmit}>
+            //     <h1 className="formTitle">Dodaj wykładowcę:</h1>
+            //     <label>Imię:
+            //         <input type="text" name="name" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}/>
+            //     </label>
+            //     <label>Nazwisko:
+            //         <input type="text" name="surname" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange}/>
+            //     </label>
+            //     <label>Numer telefonu:
+            //         <input type="number" name="phone" placeholder="Wpisz numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}/>
+            //     </label>
+            //     <label> Mail:
+            //         <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
+            //     </label>
 
-                <label> Kurs:
-                JavaScript <input type="checkbox" value="javascript" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                Java <input type="checkbox" value="java" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                Python <input type="checkbox" value="python" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                PHP <input type="checkbox" value="php" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                UX Design <input type="checkbox" value="ux" name="check" onChange={(e) => this.checkboxCourses(e)} />
-                Tester Manualny <input type="checkbox" value="testermanualny" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                </label>
+            //     <label> Kurs:
+            //     JavaScript <input type="checkbox" value="javascript" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+            //     Java <input type="checkbox" value="java" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+            //     Python <input type="checkbox" value="python" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+            //     PHP <input type="checkbox" value="php" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+            //     UX Design <input type="checkbox" value="ux" name="check" onChange={(e) => this.checkboxCourses(e)} />
+            //     Tester Manualny <input type="checkbox" value="testermanualny" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+            //     Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+            //     </label>
 
-                <label>Lokalizacja: 
-                Warszawa <input type="checkbox" value="Warszawa" name="check" onChange={(e) => this.checkboxLocalization(e)} />
-                Wrocław <input type="checkbox" value="Wrocław" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-                Poznań <input type="checkbox" value="Poznań" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-                Kraków <input type="checkbox" value="Kraków" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-                Katowice <input type="checkbox" value="Katowice" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-                Zdalnie <input type="checkbox" value="Zdalnie" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-                </label>
+            //     <label>Lokalizacja: 
+            //     Warszawa <input type="checkbox" value="Warszawa" name="check" onChange={(e) => this.checkboxLocalization(e)} />
+            //     Wrocław <input type="checkbox" value="Wrocław" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+            //     Poznań <input type="checkbox" value="Poznań" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+            //     Kraków <input type="checkbox" value="Kraków" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+            //     Katowice <input type="checkbox" value="Katowice" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+            //     Zdalnie <input type="checkbox" value="Zdalnie" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
+            //     </label>
 
-                <label>Tryb prowadzenia zajęć:
-                Stacjonarny <input type="checkbox" value="stacjonarny" name="check" onChange={(e) => this.checkboxMode(e)} />
-                Weekedowy <input type="checkbox" value="weekendowy" name="check" onChange={(e) => this.checkboxMode(e)}/>
-                Online <input type="checkbox" value="online" name="check" onChange={(e) => this.checkboxMode(e)}/>
-                </label>
+            //     <label>Tryb prowadzenia zajęć:
+            //     Stacjonarny <input type="checkbox" value="stacjonarny" name="check" onChange={(e) => this.checkboxMode(e)} />
+            //     Weekedowy <input type="checkbox" value="weekendowy" name="check" onChange={(e) => this.checkboxMode(e)}/>
+            //     Online <input type="checkbox" value="online" name="check" onChange={(e) => this.checkboxMode(e)}/>
+            //     </label>
 
-                <label> Dodatkowe uwagi:
-                    <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
-                </label>
+            //     <label> Dodatkowe uwagi:
+            //         <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
+            //     </label>
                 
-            <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
-            </form>
+            // <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
+            // </form>
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Form>
+                        <Form.Group controlId="nameSection">
+                            <Form.Label>Imię:</Form.Label>
+                            <Form.Control type="text" placeholder="Wpisz imię"></Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId="surnameSection">
+                            <Form.Label>Nazwisko:</Form.Label>
+                            <Form.Control type="text" placeholder="Wpisz nazwisko"></Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId="mailSection">
+                            <Form.Label>Mail:</Form.Label>
+                            <Form.Control type="email" placeholder="Wpisz e-mail"></Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId="numberSection">
+                            <Form.Label>Numer telefonu:</Form.Label>
+                            <Form.Control type="text" placeholder="Numer telefonu"></Form.Control>
+                        </Form.Group>
+                    </Form>
+                </Row>
+                
+                <Form.Group as={Row}>
+                    <Form.Label as="legend" column sm={2}> Kurs: </Form.Label>
+                    <Col sm={10}>
+                        <Form.Check
+                            type="checkbox"
+                            label="JavaScript"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios1"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Java"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios2"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Python"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="PHP"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="UX Design"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Tester Manualny"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Tester Automatyzujący"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label as="legend" column sm={2}> Lokalizacja: </Form.Label>
+                    <Col sm={10}>
+                        <Form.Check
+                            type="checkbox"
+                            label="Warszawa"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios1"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Wrocław"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios2"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Poznań"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Kraków"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Katowice"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Zdalnie"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                    </Col>
+                </Form.Group>
+                <Form.Group as={Row}>
+                    <Form.Label as="legend" column sm={2}> Tryb prowadzenia zajęć: </Form.Label>
+                    <Col sm={10}>
+                        <Form.Check
+                            type="checkbox"
+                            label="Stacjonarny"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios1"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Weekendowy"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios2"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="Online"
+                            name="formHorizontalRadios"
+                            id="formHorizontalRadios3"
+                        />
+                    </Col>
+                </Form.Group>
+                <Row className="justify-content-md-center">
+                <Form.Group controlId="Remarks">
+                            <Form.Label>Uwagi:</Form.Label>
+                            <Form.Control type="text" placeholder="Uwagi"></Form.Control>
+                        </Form.Group>
+                        </Row>
+            </Container>
+            
         )
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Main extends Component {
     render() {
