@@ -3,8 +3,10 @@ import '../Finder/Finder.scss';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
+import Alert from 'react-bootstrap/Alert'
 
 //Wyszukiwarka//
 
@@ -49,12 +51,9 @@ class Search extends Component {
       <Container>
         <Row><InputGroup className="mb-3">
           <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroup-sizing-default">Szukaj</InputGroup.Text>
+            <InputGroup.Text id="inputGroup-sizing-default"><i className="fas fa-search"></i></InputGroup.Text>
           </InputGroup.Prepend>
-          <FormControl onInput={this.filterUsers.bind(this)} 
-            aria-label="Default"
-            aria-describedby="inputGroup-sizing-default"
-          />
+          <FormControl onInput={this.filterUsers.bind(this)} />
         </InputGroup></Row>
         <Row><UsersList users={this.state.filteredUsers} /></Row>
       </Container>
@@ -65,7 +64,6 @@ class Search extends Component {
   const UsersList = ({ users }) => {
     if (users.length > 0) {
       return (
-        <Row>
         <Table striped bordered hover size="sm">
           <thead>
             <tr>
@@ -97,12 +95,23 @@ class Search extends Component {
           })}
           </tbody>
         </Table>
-        </Row>
       );
     }
   
     return (
-      <p>Nie ma takiej osoby! Zgłoś się do HRów, poszukają :) !</p>
+      <Col>
+      <Alert variant="danger">
+        <Alert.Heading>Ups!</Alert.Heading>
+        <p>
+            Nie ma osoby spełniającej dane kryteria.
+        </p>
+        <hr />
+        <p className="mb-0">
+        Zgłoś się do HRów, poszukają :) !
+      </p>
+      </Alert>
+      </Col>
+      
     );
   };
 
