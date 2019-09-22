@@ -6,9 +6,9 @@
         "surname": "Kowalski",
         "phone": "111-111-111",
         "email": "jankowalski@pl",
-        "course": "JavaScript",
-        "localization":"Warszawa",
-        "mode":"stacjonarny",
+        "course": ["JavaScript", "Java"],
+        "localization":["Warszawa"],
+        "mode":["stacjonarny"],
         "comments": "Dobry gość"
       },
       {
@@ -17,9 +17,9 @@
         "surname": "Polak",
         "phone": "222-222-222",
         "email": "januszpolak@pl",
-        "course": "Java",
-        "localization":"Wrocław",
-        "mode":"weekendowy",
+        "course": ["Java"],
+        "localization":["Wrocław"],
+        "mode":["weekendowy"],
         "comments": "Może być"
       },
       {
@@ -28,9 +28,9 @@
         "surname": "Polka",
         "phone": "333-333-333",
         "email": "grażynap@pl",
-        "course": "PHP",
-        "localization":"Poznań",
-        "mode":"stacjonarny",
+        "course": ["PHP"],
+        "localization":["Poznań"],
+        "mode":["stacjonarny"],
         "comments": "Super!"
         },
         {
@@ -39,9 +39,9 @@
         "surname": "Kowal",
         "phone": "444-444-444",
         "email": "mariuszkow@pl",
-        "course": "Python",
-        "localization":"Katowice",
-        "mode":"weekendowy",
+        "course": ["Python"],
+        "localization":["Katowice"],
+        "mode":["weekendowy"],
         "comments": "Umawiać wcześniej"
         },
         {
@@ -50,9 +50,9 @@
         "surname": "Gates",
         "phone": "555-555-555",
         "email": "billybill@pl",
-        "course": "Java",
-        "localization":"zdalnie",
-        "mode":"online",
+        "course": ["Java"],
+        "localization":["zdalnie"],
+        "mode":["online"],
         "comments": "Najlepiej!"
         },
         {
@@ -61,9 +61,9 @@
         "surname": "Szatan",
         "phone": "666-666-666",
         "email": "szatan@pl",
-        "course": "UX Design",
-        "localization":"Kraków",
-        "mode":"stacjonarny",
+        "course": ["UX Design"],
+        "localization":["Kraków"],
+        "mode":["stacjonarny"],
         "comments": "Kursanci go lubią"
         },
         {
@@ -72,9 +72,9 @@
         "surname": "Bagińska",
         "phone": "777-777-777",
         "email": "testymario@pl",
-        "course": "Tester Manualny",
-        "localization":"Warszawa",
-        "mode":"stacjonarny",
+        "course": ["Tester Manualny"],
+        "localization":["Warszawa"],
+        "mode":["stacjonarny"],
         "comments": ""
          },
          {
@@ -83,9 +83,9 @@
          "surname": "Pawłowski",
          "phone": "888-888-888",
          "email": "pawpaw@pl",
-         "course": "Tester Automatyzujący",
-         "localization":"Poznań",
-         "mode":"weekendowy",
+         "course": ["Tester Automatyzujący"],
+         "localization":["Poznań"],
+         "mode":["weekendowy"],
          "comments": "Nowy, do sprawdzenia"
         },
         {
@@ -94,9 +94,9 @@
          "surname": "Janowski",
          "phone": "999-999-999",
          "email": "mirojanowski@pl",
-         "course": "JavaScript",
-         "localization":"Warszawa",
-         "mode":"stacjonarny",
+         "course": ["JavaScript"],
+         "localization":["Warszawa"],
+         "mode":["stacjonarny"],
          "comments": "5 lat doświadczenia"
          },
          {
@@ -105,41 +105,22 @@
           "surname": "Monikowska",
           "phone": "101-101-101",
           "email": "monikowskam@pl",
-          "course": "JavaScript",
-          "localization":"Poznań",
-          "mode":"weekendowy",
+          "course": ["JavaScript"],
+          "localization":["Poznań"],
+          "mode":["weekendowy"],
           "comments": "Super!"
         }
     ],
-         "avaliability": [
+         "lectures": [
           { "id": 1,
-            "name": "Jan",
-            "surname": "Kowalski",
-            "phone": "111-111-111",
-            "email": "jankowalski@pl",
-            "course": "JavaScript",
-            "localization":"Warszawa",
-            "mode":"stacjonarny",
-            "comments": "Dobry gość",
-            "zajety": "30 września - 4 października"},
-          {
-            "id2": "30 września - 4 października"},
-          { 
-            "id3": "30 września - 4 października"},
-          { 
-            "id4": "30 września - 4 października"},
-          { 
-            "id5": "30 września - 4 października"},
-          { 
-            "id6": "30 września - 4 października"},
-          { 
-            "id7": "30 września - 4 października"},
-          { 
-            "id8": "30 września - 4 października"},
-          {
-            "id9": "30 września - 4 października"},
-          { 
-            "id10": "30 września - 4 października"}
+            "date": "2019-09-30",
+            "lecturerId": 1
+          },
+          { "id": 2,
+            "date": "2019-09-02",
+            "lecturerId": 1
+          }
+           
          ]
           
 

@@ -95,9 +95,9 @@ class Search extends Component {
                 <td>{user.surname}</td>
                 <td>{user.phone}</td>
                 <td>{user.email}</td>
-                <td>{user.course}</td>
-                <td>{user.mode}</td>
-                <td>{user.localization}</td>
+                <td>{user.course.join(", ")}</td>
+                <td>{user.mode.join(", ")}</td>
+                <td>{user.localization.join(", ")}</td>
                 <td>{user.comments}</td>
               </tr>
             })}
