@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 
 /*import {
@@ -190,25 +191,25 @@ class AddForm extends Component{
             // <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
             // </form>
             <Container>
+                <Form className="addLecturerForm"onSubmit={this.handleSubmit}>
                 <Row className="justify-content-md-center">
-                    <Form>
+                    
                         <Form.Group controlId="nameSection">
                             <Form.Label>Imię:</Form.Label>
-                            <Form.Control type="text" placeholder="Wpisz imię"></Form.Control>
+                            <Form.Control type="text" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}></Form.Control>
                         </Form.Group>
                         <Form.Group controlId="surnameSection">
                             <Form.Label>Nazwisko:</Form.Label>
-                            <Form.Control type="text" placeholder="Wpisz nazwisko"></Form.Control>
+                            <Form.Control type="text" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange} ></Form.Control>
                         </Form.Group>
                         <Form.Group controlId="mailSection">
                             <Form.Label>Mail:</Form.Label>
-                            <Form.Control type="email" placeholder="Wpisz e-mail"></Form.Control>
+                            <Form.Control type="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange}></Form.Control>
                         </Form.Group>
                         <Form.Group controlId="numberSection">
                             <Form.Label>Numer telefonu:</Form.Label>
-                            <Form.Control type="text" placeholder="Numer telefonu"></Form.Control>
+                            <Form.Control type="text" placeholder="Numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}></Form.Control>
                         </Form.Group>
-                    </Form>
                 </Row>
                 
                 <Form.Group as={Row}>
@@ -217,44 +218,58 @@ class AddForm extends Component{
                         <Form.Check
                             type="checkbox"
                             label="JavaScript"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios1"
+                            //name="formHorizontalRadios"
+                            //id="formHorizontalRadios1"
+                            value="javascript"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Java"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios2"
+                           // name="formHorizontalRadios"
+                            //id="formHorizontalRadios2"
+                            value="java"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Python"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
+                           // name="formHorizontalRadios"
+                            //id="formHorizontalRadios3"
+                            value="python"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="PHP"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
+                           // name="formHorizontalRadios"
+                           // id="formHorizontalRadios3"
+                            value="php"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="UX Design"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
+                           // name="formHorizontalRadios"
+                           // id="formHorizontalRadios3"
+                            value="ux"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Tester Manualny"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
+                            //name="formHorizontalRadios"
+                           // id="formHorizontalRadios3"
+                            value="testermanualny"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Tester Automatyzujący"
-                            name="formHorizontalRadios"
-                            id="formHorizontalRadios3"
+                           // name="formHorizontalRadios"
+                           // id="formHorizontalRadios3"
+                            value="testerautomatyzujący"
+                            onChange={(e) => this.checkboxCourses(e)}
                         />
                     </Col>
                 </Form.Group>
@@ -266,36 +281,49 @@ class AddForm extends Component{
                             label="Warszawa"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios1"
+                            value="Warszawa"
+                            onChange={(e) => this.checkboxLocalization(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Wrocław"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios2"
+                            value="Wrocław"
+                            onChange={(e) => this.checkboxLocalization(e)}
+                        
                         />
                         <Form.Check
                             type="checkbox"
                             label="Poznań"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios3"
+                            value="Poznań"
+                            onChange={(e) => this.checkboxLocalization(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Kraków"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios3"
+                            value="Kraków"
+                            onChange={(e) => this.checkboxLocalization(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Katowice"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios3"
+                            value="Katowice"
+                            onChange={(e) => this.checkboxLocalization(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Zdalnie"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios3"
+                            value="Zdalnie"
+                            onChange={(e) => this.checkboxLocalization(e)}
                         />
                     </Col>
                 </Form.Group>
@@ -307,50 +335,42 @@ class AddForm extends Component{
                             label="Stacjonarny"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios1"
+                            value="stacjonarny"
+                            onChange={(e) => this.checkboxMode(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Weekendowy"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios2"
+                            value="weekendowy"
+                            onChange={(e) => this.checkboxMode(e)}
                         />
                         <Form.Check
                             type="checkbox"
                             label="Online"
                             name="formHorizontalRadios"
                             id="formHorizontalRadios3"
+                            value="online"
+                            onChange={(e) => this.checkboxMode(e)}
                         />
                     </Col>
                 </Form.Group>
                 <Row className="justify-content-md-center">
                 <Form.Group controlId="Remarks">
                             <Form.Label>Uwagi:</Form.Label>
-                            <Form.Control type="text" placeholder="Uwagi"></Form.Control>
+                            <Form.Control type="textarea" placeholder="Uwagi"value={this.state.text} onChange={this.handleTextChange} ></Form.Control>
                         </Form.Group>
                         </Row>
+                        <Button variant="primary" type="submit">
+    Submit
+  </Button>
+                        </Form>
             </Container>
             
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class Main extends Component {
     render() {
