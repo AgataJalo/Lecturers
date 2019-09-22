@@ -4,7 +4,6 @@ import {
     NavLink,
   } from 'react-router-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
 class Start extends Component {
