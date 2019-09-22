@@ -16,8 +16,8 @@ class AddForm extends Component{
             email:"",
             text: "",
             technology: [],
-            localization: [],
-            mode: []
+            mode: [],
+            localization: []
         }
             this.checkboxCourses = this.checkboxCourses.bind(this);
             this.checkboxLocalization = this.checkboxLocalization.bind(this);
@@ -82,7 +82,7 @@ class AddForm extends Component{
             state.technology.push(e.currentTarget.value);
         } else {
             let index = state.technology.indexOf(e.currentTarget.value);
-            delete state.technology[index];
+            state.technology.splice(index, 1);
         }
 
         this.setState(state);
@@ -96,7 +96,8 @@ class AddForm extends Component{
             state.localization.push(e.currentTarget.value);
         } else {
             let index = state.localization.indexOf(e.currentTarget.value);
-            delete state.localization[index];   
+            // TODO Why delete state.localization[index] did not work?
+            state.localization.splice(index, 1);   
         }
         this.setState(state);
        // console.log(state);
@@ -109,7 +110,7 @@ class AddForm extends Component{
             state.mode.push(e.currentTarget.value);
         } else {
             let index = state.mode.indexOf(e.currentTarget.value);
-            delete state.mode[index];
+            state.mode.splice(index, 1);
         }
         this.setState(state);
        // console.log(state);
@@ -138,10 +139,10 @@ class AddForm extends Component{
 
     render(){
         return (
-            <form className="addLecturerForm"onSubmit={this.handleSubmit}>
-                <h1 className="formTitle">Dodaj wykładowcę:</h1>
+             
+            <form className="addLecturersForm" onSubmit={this.handleSubmit}>
                 <label>Imię:
-                    <input type="text" name="name" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}/>
+                    <input className="input"type="text" name="name" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}/>
                 </label>
                 <label>Nazwisko:
                     <input type="text" name="surname" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange}/>
@@ -152,15 +153,15 @@ class AddForm extends Component{
                 <label> Mail:
                     <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
                 </label>
-
-                <label> Kurs:
+                
+                <label className="course"> Kurs:
                 JavaScript <input type="checkbox" value="javascript" name="check" onChange={(e) => this.checkboxCourses(e)}/>
                 Java <input type="checkbox" value="java" name="check" onChange={(e) => this.checkboxCourses(e)}/>
                 Python <input type="checkbox" value="python" name="check" onChange={(e) => this.checkboxCourses(e)}/>
                 PHP <input type="checkbox" value="php" name="check" onChange={(e) => this.checkboxCourses(e)}/>
                 UX Design <input type="checkbox" value="ux" name="check" onChange={(e) => this.checkboxCourses(e)} />
-                Tester Manualny <input type="checkbox" value="testermanualny" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-                Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                Tester Manualny <input type="checkbox" value="tester manualny" name="check" onChange={(e) => this.checkboxCourses(e)}/>
+                Tester Automatyzujący <input type="checkbox" value="tester automatyzujący" name="check" onChange={(e) => this.checkboxCourses(e)}/>
                 </label>
 
                 <label>Lokalizacja: 
@@ -178,12 +179,14 @@ class AddForm extends Component{
                 Online <input type="checkbox" value="online" name="check" onChange={(e) => this.checkboxMode(e)}/>
                 </label>
 
-                <label> Dodatkowe uwagi:
-                    <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
+                <label> Komentarz:
+                    <textarea  placeholder="Komentarz" value={this.state.text} onChange={this.handleTextChange}></textarea>
                 </label>
                 
             <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
             </form>
+            
+            
         )
     }
 }
