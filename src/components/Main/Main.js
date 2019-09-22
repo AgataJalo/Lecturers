@@ -145,52 +145,6 @@ class AddForm extends Component{
 
     render(){
         return (
-            // <form className="addLecturerForm"onSubmit={this.handleSubmit}>
-            //     <h1 className="formTitle">Dodaj wykładowcę:</h1>
-            //     <label>Imię:
-            //         <input type="text" name="name" placeholder="Wpisz imię" value={this.state.name} onChange={this.handleNameChange}/>
-            //     </label>
-            //     <label>Nazwisko:
-            //         <input type="text" name="surname" placeholder="Wpisz nazwisko" value={this.state.surname} onChange={this.handleSurnameChange}/>
-            //     </label>
-            //     <label>Numer telefonu:
-            //         <input type="number" name="phone" placeholder="Wpisz numer telefonu" value={this.state.phone} onChange={this.handlePhoneChange}/>
-            //     </label>
-            //     <label> Mail:
-            //         <input type="email" name="email" placeholder="Wpisz e-mail" value={this.state.email}onChange={this.handleMailChange} /> 
-            //     </label>
-
-            //     <label> Kurs:
-            //     JavaScript <input type="checkbox" value="javascript" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-            //     Java <input type="checkbox" value="java" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-            //     Python <input type="checkbox" value="python" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-            //     PHP <input type="checkbox" value="php" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-            //     UX Design <input type="checkbox" value="ux" name="check" onChange={(e) => this.checkboxCourses(e)} />
-            //     Tester Manualny <input type="checkbox" value="testermanualny" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-            //     Tester Automatyzujący <input type="checkbox" value="testerautomatyzujący" name="check" onChange={(e) => this.checkboxCourses(e)}/>
-            //     </label>
-
-            //     <label>Lokalizacja: 
-            //     Warszawa <input type="checkbox" value="Warszawa" name="check" onChange={(e) => this.checkboxLocalization(e)} />
-            //     Wrocław <input type="checkbox" value="Wrocław" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-            //     Poznań <input type="checkbox" value="Poznań" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-            //     Kraków <input type="checkbox" value="Kraków" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-            //     Katowice <input type="checkbox" value="Katowice" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-            //     Zdalnie <input type="checkbox" value="Zdalnie" name="check" onChange={(e) => this.checkboxLocalization(e)}/>
-            //     </label>
-
-            //     <label>Tryb prowadzenia zajęć:
-            //     Stacjonarny <input type="checkbox" value="stacjonarny" name="check" onChange={(e) => this.checkboxMode(e)} />
-            //     Weekedowy <input type="checkbox" value="weekendowy" name="check" onChange={(e) => this.checkboxMode(e)}/>
-            //     Online <input type="checkbox" value="online" name="check" onChange={(e) => this.checkboxMode(e)}/>
-            //     </label>
-
-            //     <label> Dodatkowe uwagi:
-            //         <textarea  placeholder="Wpisz dodatkowe uwagi" value={this.state.text} onChange={this.handleTextChange}></textarea>
-            //     </label>
-                
-            // <input className="formSubmit" type="submit" value="Dodaj wykładowcę" /*onClick={this.submitForm}*//>
-            // </form>
             <Container>
                 <Form className="addLecturerForm" onSubmit={this.handleSubmit}>
                     <Row>
@@ -337,12 +291,14 @@ class AddForm extends Component{
                         </Form.Group>
                     </Row>
                     <Row>
-                        <Form.Group  as={Col}controlId="Remarks">
+                        <Form.Group as={Col} controlId="Remarks">
                             <Form.Label>Uwagi:</Form.Label>
                             <Form.Control as="textarea" rows="3" placeholder="Uwagi" value={this.state.text} onChange={this.handleTextChange} ></Form.Control>
                         </Form.Group>
                     </Row>
-                    <Button variant="primary" type="submit">Dodaj wykładowcę</Button>
+                    <Row>
+                        <Button as={Col} variant="primary" type="submit">Dodaj wykładowcę</Button>
+                    </Row>
                 </Form>
             </Container>
         )
