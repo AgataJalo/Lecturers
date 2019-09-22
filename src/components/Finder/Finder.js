@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Alert from 'react-bootstrap/Alert'
+import Spinner from 'react-bootstrap/Spinner'
 
 //Wyszukiwarka//
 
@@ -15,7 +16,8 @@ class Search extends Component {
       super();    
       
       this.state = {
-        filteredUsers: []
+        filteredUsers: [],
+        loading: true
       };
     }
 
@@ -26,7 +28,8 @@ class Search extends Component {
         .then(data=> {
             this.setState({ 
                 lecturers: data,
-                filteredUsers: data
+                filteredUsers: data,
+                loading: false
             });
         })
     }
@@ -49,20 +52,26 @@ class Search extends Component {
     render () {
     return (
       <Container>
-        <Row><InputGroup className="mb-3">
-          <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroup-sizing-default"><i className="fas fa-search"></i></InputGroup.Text>
-          </InputGroup.Prepend>
-          <FormControl onInput={this.filterUsers.bind(this)} />
-        </InputGroup></Row>
-        <Row><UsersList users={this.state.filteredUsers} /></Row>
+        <Row>
+          <InputGroup className="mb-3">
+            <InputGroup.Prepend>
+              <InputGroup.Text id="inputGroup-sizing-default"><i className="fas fa-search"></i></InputGroup.Text>
+            </InputGroup.Prepend>
+            <FormControl onInput={this.filterUsers.bind(this)} />
+          </InputGroup>
+        </Row>
+        <Row className="justify-content-md-center">
+          <Content loading={this.state.loading} users={this.state.filteredUsers} />
+        </Row>
       </Container>
     );
   }
 };
-  
-  const UsersList = ({ users }) => {
-    if (users.length > 0) {
+
+  const Content = ({ loading, users }) => {
+    if (loading === true) {
+      return <Spinner animation="border"/>
+    } else if (users.length > 0) {
       return (
         <Table striped bordered hover size="sm">
           <thead>
@@ -79,8 +88,7 @@ class Search extends Component {
             </tr>
           </thead>
           <tbody>
-          {users.map(function(user, key){
-             // return <li key={key}>{user.id}{user.name} {user.surname} {user.phone} {user.email}{user.course}{user.localization}{user.mode}{user.comments}</li> 
+            {users.map(function (user, key) {
               return <tr key={key}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
@@ -91,29 +99,30 @@ class Search extends Component {
                 <td>{user.mode}</td>
                 <td>{user.localization}</td>
                 <td>{user.comments}</td>
-                </tr>
-          })}
+              </tr>
+            })}
           </tbody>
         </Table>
       );
-    }
-  
-    return (
-      <Col>
-      <Alert variant="danger">
-        <Alert.Heading>Ups!</Alert.Heading>
-        <p>
-            Nie ma osoby spełniającej dane kryteria.
+    } else {
+
+      return (
+        <Col>
+          <Alert variant="danger">
+            <Alert.Heading>Ups!</Alert.Heading>
+            <p>
+              Nie ma osoby spełniającej dane kryteria.
+          </p>
+            <hr />
+            <p className="mb-0">
+              Zgłoś się do HRów, poszukają :) !
         </p>
-        <hr />
-        <p className="mb-0">
-        Zgłoś się do HRów, poszukają :) !
-      </p>
-      </Alert>
-      </Col>
-      
-    );
-  };
+          </Alert>
+        </Col>
+
+      );
+    }
+  }
 
 //Wywołanie//
 
