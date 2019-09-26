@@ -73,7 +73,7 @@ class Search extends Component {
       return <Spinner animation="border"/>
     } else if (users.length > 0) {
       return (
-        <Table striped bordered hover size="sm" className="lecturerTable">
+        <Table striped bordered hover responsive size="sm" className="lecturerTable">
           <thead className="lecturerTableHead">
             <tr>
               <th>ID:</th>
