@@ -1,5 +1,40 @@
-.avaliability{
-    border: 1px solid black;
-    width:10px;
-    height:10px;
+@import './src/styles/variables.scss';
+
+.btn {
+    background-color: $logoColor;
+    border: 1px solid $logoColor;
+    width: 100em;
+    margin-bottom: 1em;
+    
+}
+
+.btn:hover{
+    background-color: white;
+    color: $logoColor;
+    border: 1px solid $logoColor;
+}
+
+.btn:focus{
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(255, 219, 100, 0.5)
+}
+
+.buttonSection, .cardSection{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendarDesc{
+    color:black;
+    border:1px solid white;
+    opacity: 0.5;
+    line-height: 2em;
+}
+
+.cards{
+    color: $textColor;
+}
+
+.cardTitle{
+    color:$logoColor;
 }

@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 
 
 /*import {
@@ -145,7 +145,7 @@ class AddForm extends Component{
 
     render(){
         return (
-            <Container>
+            <Container className="container-form">
                 <Form className="addLecturerForm" onSubmit={this.handleSubmit}>
                     <Row>
                         <Form.Group as={Col} controlId="nameSection">
@@ -296,8 +296,8 @@ class AddForm extends Component{
                             <Form.Control as="textarea" rows="3" placeholder="Uwagi" value={this.state.text} onChange={this.handleTextChange} ></Form.Control>
                         </Form.Group>
                     </Row>
-                    <Row>
-                        <Button as={Col} variant="primary" type="submit">Dodaj wykładowcę</Button>
+                    <Row className="buttonSection">
+                        <button className ="btn"as={Col} variant="primary" type="submit">Dodaj wykładowcę</button>
                     </Row>
                 </Form>
             </Container>

@@ -1,0 +1,38 @@
+.alert{
+    background-color:#6c6b6b;
+    color:white;
+    opacity:0.5;
+    margin-top: 2em;
+    
+}
+
+.alert-section{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert:hover{
+    opacity:0.5;
+}
+
+@keyframes pulse {
+    from { transform: scale(2); }
+    50% { transform: scale(0.85);}
+    to { transform: scale(1); }
+  }
+  
+  .alert {
+    animation-name: pulse;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+  }
+
+  .lecturerTable{
+      font-size: 0.7em;
+  }
+ 
+  .lecturerTableHead{
+      color: #fbbb21;
+      text-align: center;
+  }

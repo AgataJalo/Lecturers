@@ -4,7 +4,7 @@ import {
     NavLink,
   } from 'react-router-dom';
 
-import Button from 'react-bootstrap/Button';
+
 
 class Start extends Component {
     render() {

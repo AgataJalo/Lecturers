@@ -73,8 +73,8 @@ class Search extends Component {
       return <Spinner animation="border"/>
     } else if (users.length > 0) {
       return (
-        <Table striped bordered hover size="sm">
-          <thead>
+        <Table striped bordered hover size="sm" className="lecturerTable">
+          <thead className="lecturerTableHead">
             <tr>
               <th>ID:</th>
               <th>Imię:</th>
@@ -107,13 +107,13 @@ class Search extends Component {
     } else {
 
       return (
-        <Col>
-          <Alert variant="danger">
+        <Col className='alert-section'>
+          <Alert className='alert' variant="danger">
             <Alert.Heading>Ups!</Alert.Heading>
             <p>
               Nie ma osoby spełniającej dane kryteria.
           </p>
-            <hr />
+           
             <p className="mb-0">
               Zgłoś się do HRów, poszukają :) !
         </p>

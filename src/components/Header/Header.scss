@@ -26,6 +26,7 @@
   }
 
 .letter {
+  color:#6c6b6b;
   transform: scale(0);
   animation: pop-up .75s forwards;		
   @for $i from 1 through 10 {

@@ -5,15 +5,15 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+//import Button from 'react-bootstrap/Button'
 
 class Calendar extends Component {
   constructor() {
     super()
 
     this.state = {
-      dateFrom: "2019-09-01",
-      dateTo: "2019-09-06",
+      dateFrom: " ",
+      dateTo: " ",
       lecturerList: [],
       localization: "Warszawa",
       course: "Python"
@@ -70,9 +70,11 @@ class Calendar extends Component {
   render() {
     return (
       <Container>
-
+      <h4 className="calendarDesc">Sprawdź, czy wykładowca jest dostępny w wybranym przedziale czasu.</h4>
         <Form>
+
           <Row>
+            
             <Form.Group as={Col} controlId="fromDateSection">
               <Form.Label>Od:</Form.Label>
               <Form.Control type="text" placeholder="Od" value={this.state.dateFrom} onChange={this.handleDateFrom}></Form.Control>
@@ -106,19 +108,19 @@ class Calendar extends Component {
            
           </Row>
         </Form>
-        <Row> <Button  as={Col} onClick={this.clickButton}>Szukaj</Button></Row>
-        <Row>
+        <Row className="buttonSection"> <button className="btn" as={Col} onClick={this.clickButton}>Szukaj</button></Row>
+        <Row className="cardSection">
           {this.state.lecturerList.map(function (lecturer, key) {
-            return <Card key={key}>
-              <Card.Body>
-                <Card.Title>{lecturer.name} {lecturer.surname}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+            return <Card key={key} className="cardSection">
+              <Card.Body className="cards">
+                <Card.Title className="cardTitle">{lecturer.name} {lecturer.surname}</Card.Title>
+                <Card.Subtitle>{lecturer.course.join(', ')}</Card.Subtitle>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up the bulk of
-                  the card's content.
+                 Nie prowadzi zajęć w wybranym terminie.
                 </Card.Text>
               </Card.Body>
             </Card>
+            
           })}
         </Row>
       </Container>

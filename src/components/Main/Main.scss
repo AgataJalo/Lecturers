@@ -13,18 +13,18 @@
     font-size: 1rem;//20px
 }
 
-
-.formTitle{
-color: #fbbb21;
+.buttonSection{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.formSubmit{
-    display: flex;
-
-    
+.btn{
+    color:white;
 }
 
-label{
-    color:#6c6b6b;
-    
+.container-form{
+    background-color:white;
+    border: 5px solid white;
+    border-radius: 10px;
 }
