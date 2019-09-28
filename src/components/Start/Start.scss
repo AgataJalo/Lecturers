@@ -1,10 +1,12 @@
+@import './src/styles/variables.scss';
+
 .home {
   font-size:24px;
   min-width:500px;
   max-width:1800px;
-  border-left:5px solid gold;
-  border-right:5px solid gold;
-  background-color:white;
+  border-left:5px solid $logoColor;
+  border-right:5px solid $logoColor;
+  background-color: white;
   padding: 50px;
 }
 
@@ -13,7 +15,8 @@ h4 {
   text-align:center;
   font-size:1.6em;
   line-height:3.5em;
-  background-color:white;
+  background-color: white;
+  color: $textColor;
 
 }
 
@@ -32,8 +35,8 @@ background: white;
   flex-basis: 0;
   font-size:1em;
   line-height:0.5em;
-  background-color: #fbbb21;
-  border: 1px solid #fbbb21;
+  background-color: $logoColor;
+  border: 1px solid $logoColor;
   border-radius: 10px;
   margin-right: 25px;
   transition: all 0.4s ease 0s;
@@ -43,7 +46,7 @@ background: white;
   margin:15px 0;
   padding:15px;
   text-align: center;
-  color: white;
+  color: $baseColor;
 }
 
 .optionsDivCenter {
@@ -51,8 +54,8 @@ background: white;
   flex-basis: 0;
   font-size:1em;
   line-height:0.5em;
-  background-color: #fbbb21;
-  border: 1px solid #fbbb21;
+  background-color: $logoColor;
+  border: 1px solid $logoColor;
   border-radius: 10px;
   margin-right: 25px;
   transition: all 0.4s ease 0s;
@@ -63,7 +66,7 @@ background: white;
   margin:15px 0;
   padding:15px;
   text-align: center;
-  color:white;
+  color: $baseColor;
 }
 
 .optionsDivRight {
@@ -71,8 +74,8 @@ background: white;
   font-size:1em;
   flex-basis: 0;
   line-height:0.5em;
-  background-color: #fbbb21;
-  border: 1px solid #fbbb21;
+  background-color: $logoColor;
+  border: 1px solid $logoColor;
   border-radius: 10px;
   transition: all 0.4s ease 0s;
 }
@@ -81,7 +84,7 @@ background: white;
   margin:15px 0;
   padding:15px;
   text-align: center;
-  color:white;
+  color: $baseColor;
 }
 
 .navLinks:link{
@@ -114,7 +117,7 @@ background: white;
       margin:15px 0;
       padding:15px;
       text-align: center;
-      color:white;
+      color: $baseColor;
   }
 
 }

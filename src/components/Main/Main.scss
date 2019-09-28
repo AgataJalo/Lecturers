@@ -20,11 +20,11 @@
 }
 
 .btn{
-    color:white;
+    color: $baseColor;
 }
 
 .container-form{
     background-color:white;
-    border: 5px solid white;
+    border: 1px solid $logoColor;
     border-radius: 10px;
 }

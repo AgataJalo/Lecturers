@@ -32,14 +32,6 @@ class AddForm extends Component{
 
         }
 
-    /* 
-    Mogę skrócić ten zapis
-    handleChange = e => {
-  this.setState({
-    [e.tagret.name]: e.target.value
-  });
-} */
-
 //Obsługa inputów text,number,email
 
     handleNameChange = e => {
@@ -53,7 +45,7 @@ class AddForm extends Component{
     };  
 
     handlePhoneChange = e => {
-        this.setState({phone: e.target.value});
+        this.setState({phone: e.target.value.replace(/\D/,'')}); //nie można wpisać liter
     };  
 
     handleMailChange = e => {
@@ -122,26 +114,6 @@ class AddForm extends Component{
        // console.log(state);
     }
 
- // Submit
-
-    /* submitForm(){
-
-        let state = this.state;
-        
-        if(this.state.name === ''){
-            alert("Uzupełnij imię!");
-        } else if (this.state.surname === ''){
-            alert("Uzupełnij nazwisko!")
-        } else if (this.state.phone === ''){
-            alert("Uzupełnij numer telefonu!")
-        } else if(this.state.email === ''){
-            alert("Uzupełnij e-mail!")  
-        } else {
-            alert("Dodany do bazy")
-        }
-        
-        this.setState(state);
-} */
 
     render(){
         return (

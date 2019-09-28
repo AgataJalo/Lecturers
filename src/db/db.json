@@ -67,17 +67,6 @@
         "comments": "Kursanci go lubią"
         },
         {
-          "id": 6,
-          "name": "Tomasz",
-          "surname": "Dizajner",
-          "phone": "666-666-666",
-          "email": "tomdiz@pl",
-          "course": ["UX Design"],
-          "localization":["Kraków", "Poznań","Warszawa","Wrocław","Katowice"],
-          "mode":["stacjonarny"],
-          "comments": "Kursanci go lubią"
-          },
-        {
         "id": 7,
         "name": "Mariola",
         "surname": "Bagińska",
@@ -131,7 +120,18 @@
           "localization":["Warszawa", "Wrocław"],
           "mode":["stacjonarny"],
           "comments": "Super opinie."
-        }
+        },
+        {
+          "id": 12,
+          "name": "Tomasz",
+          "surname": "Dizajner",
+          "phone": "666-666-666",
+          "email": "tomdiz@pl",
+          "course": ["UX Design"],
+          "localization":["Kraków", "Poznań","Warszawa","Wrocław","Katowice"],
+          "mode":["stacjonarny"],
+          "comments": "Kursanci go lubią"
+          }
     ],
          "lectures": [
           { "id": 1,

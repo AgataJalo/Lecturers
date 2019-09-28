@@ -1,6 +1,8 @@
+@import './src/styles/variables.scss';
+
 .alert{
-    background-color:#6c6b6b;
-    color:white;
+    background-color:$textColor;
+    color: $baseColor;
     opacity:0.5;
     margin-top: 2em;
     
@@ -33,6 +35,6 @@
   }
  
   .lecturerTableHead{
-      color: #fbbb21;
+      color: $logoColor;
       text-align: center;
   }
