@@ -1,10 +1,10 @@
 My first application created with:
 
--ReactJS
--JavaScript (ES6)
--CSS/SASS
--Bootstrap
--JSON
+- ReactJS (React Router)
+- JavaScript (ES6)
+- CSS/SASS
+- Bootstrap
+- JSON
 
 It is an application used to manage skills and employee availability.
 
